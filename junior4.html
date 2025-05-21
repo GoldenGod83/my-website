@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Junior Project 4 | Hardware Repair</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <style>
+    body { padding-top: 70px; }
+    .btn-back { position: fixed; top: 15px; right: 15px; }
+    .project-header { text-align: center; margin-bottom: 2rem; }
+    .project-content { max-width: 800px; margin: 0 auto; }
+    .project-images img {
+      width: 100%;
+      height: auto;
+      border-radius: .25rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+    .modal-img {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal-img-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 1000px;
+    }
+    .modal-img-close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="btn btn-outline-secondary btn-back" href="Francos Vinal.html">← Back</a>
+    </div>
+  </nav>
+
+  <!-- Project Content -->
+  <header class="project-header">
+    <h1>Hardware Repair</h1>
+    <p class="lead">Junior Year Project #4</p>
+  </header>
+
+  <section class="project-content">
+    <p>During junior year, I worked on multiple hardware repairs and teardown tasks to gain hands-on experience with disassembly, diagnostics, and component-level repair.</p>
+    <ul>
+      <li>Disassembled a PS4 controller, removed the rumble motor, and soldered it back in place successfully.</li>
+      <li>Completely disassembled a Windows laptop to diagnose a DVD drive failure and Wi-Fi connectivity issue. I installed a new DVD drive and replaced the wireless card.</li>
+      <li>Opened a Chromebook to investigate and attempt bypassing the enterprise enrollment by disabling the write-protect screw (grounding screw).</li>
+      <li>Reassembled all devices, confirming functionality and learning safe teardown and reassembly practices.</li>
+    </ul>
+    <p>These repairs helped me improve my confidence with small electronics, soldering, and internal diagnostics.</p>
+    <div class="project-images">
+      <img src="images/junior4image1.jpg" alt="PS4 Controller Repair" class="img-fluid rounded" onclick="expandImage(this)">
+      <img src="images/junior4image2.jpg" alt="Laptop and Chromebook Disassembly" class="img-fluid rounded" onclick="expandImage(this)">
+    </div>
+  </section>
+
+  <!-- Modal for full-screen image -->
+  <div id="imgModal" class="modal-img" onclick="this.style.display='none'">
+    <span class="modal-img-close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <img class="modal-img-content" id="imgModalContent">
+  </div>
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Anthony Franco — Franco Fix IT</p>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function expandImage(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalContent");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+  </script>
+</body>
+</html>

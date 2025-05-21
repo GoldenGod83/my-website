@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sophomore Project 4 | Intermediate Photoshop</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <style>
+    body { padding-top: 70px; }
+    .btn-back { position: fixed; top: 15px; right: 15px; }
+    .project-header { text-align: center; margin-bottom: 2rem; }
+    .project-content { max-width: 800px; margin: 0 auto; }
+    .project-images img, .extra-images img { width: 100%; height: auto; border-radius: .25rem; margin-bottom: 1rem; transition: transform 0.3s ease; cursor: zoom-in; }
+    .project-images img:hover, .extra-images img:hover { transform: scale(1.05); }
+    .modal-img { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+    .modal-img-content { margin: auto; display: block; width: 90%; max-width: 1000px; }
+    .modal-img-close { position: absolute; top: 30px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="btn btn-outline-secondary btn-back" href="Francos Vinal.html">← Back</a>
+    </div>
+  </nav>
+
+  <!-- Project Content -->
+  <header class="project-header">
+    <h1>Intermediate Photoshop</h1>
+    <p class="lead">Sophomore Year Project #4</p>
+  </header>
+
+  <section class="project-content">
+    <p>This project demonstrates my growing skills in Adobe Photoshop through intermediate-level tasks such as object removal, messing with layers, and using advanced selection tools. These skills were applied to real world scenarios to improve image quality and edit visual elements including realistic undetectable changes.</p>
+    <ul>
+      <li>I Removed unwanted objects from complex backgrounds.</li>
+      <li>I Used layer masks, healing brush, and content aware fill.</li>
+      <li>I Enhanced images with contrast adjustments and filters.</li>
+    </ul>
+    <p>Here is an before-and-after examples from my Photoshop exercises:</p>
+    <div class="project-images">
+      <img src="images/sophomore4image1.jpg" alt="Before Edit - Original Image" class="img-fluid rounded" onclick="expandImage(this)">
+      <img src="images/sophomore4image2.jpg" alt="After Edit - Object Removed" class="img-fluid rounded" onclick="expandImage(this)">
+    </div>
+  </section>
+
+  <!-- Modal for full-screen image -->
+  <div id="imgModal" class="modal-img" onclick="this.style.display='none'">
+    <span class="modal-img-close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <img class="modal-img-content" id="imgModalContent">
+  </div>
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Anthony Franco — Franco Fix IT</p>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function expandImage(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalContent");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+  </script>
+</body>
+</html>

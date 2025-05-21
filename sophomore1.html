@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Sophomore Project 1 | Intermediate Helpdesk</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <style>
+    body { padding-top: 70px; }
+    .btn-back { position: fixed; top: 15px; right: 15px; }
+    .project-header { text-align: center; margin-bottom: 2rem; }
+    .project-content { max-width: 800px; margin: 0 auto; }
+    .project-images img, .extra-images img { width: 100%; height: auto; border-radius: .25rem; margin-bottom: 1rem; transition: transform 0.3s ease; cursor: zoom-in; }
+    .project-images img:hover, .extra-images img:hover { transform: scale(1.05); }
+    .modal-img { display: none; position: fixed; z-index: 1000; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9); }
+    .modal-img-content { margin: auto; display: block; width: 90%; max-width: 1000px; }
+    .modal-img-close { position: absolute; top: 30px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+      <button class="btn btn-outline-secondary btn-back" onclick="history.back()">← Back</button>
+    </div>
+  </nav>
+
+  <!-- Project Content -->
+  <header class="project-header">
+    <h1>Intermediate Helpdesk</h1>
+    <p class="lead">Sophomore Year Project #1</p>
+  </header>
+
+  <section class="project-content">
+    <p>During my sophomore year at Vinal Technical High School, I volunteered to handle all helpdesk tickets in the IT trade no matter complexity. This experience gave me real world experience as a beginner IT analyst. The main live recovery OS I utilized during this time was Sergei Strelec's Live Windows Recovery ISO.</p>
+    <ul>
+      <li>Troubleshot software and hardware issues for students and staff.</li>
+      <li>Diagnosed network and Wi-Fi problems across multiple devices.</li>
+      <li>Reset user accounts and managed credentials through Google Admin and Microsoft Admin consoles.</li>
+      <li>Documented, communicated, and closed helpdesk tickets efficiently.</li>
+    </ul>
+    <p>This experience shaped my troubleshooting mindset and prepared me for more advanced IT issues later on.</p>
+    <div class="project-images">
+      <img src="images/sophomore1.jpg" alt="Intermediate Helpdesk - Main" class="img-fluid rounded" onclick="expandImage(this)">
+    </div>
+  </section>
+
+  <!-- Additional Screenshots -->
+  <section class="project-content extra-images">
+    <h4 class="text-center">Additional Screenshots</h4>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="images/sophomore1image1.jpg" alt="Helpdesk Terminal Session" class="img-fluid rounded" onclick="expandImage(this)">
+      </div>
+      <div class="col-md-6">
+        <img src="images/sophomore1image2.jpg" alt="Resolved Ticket Overview" class="img-fluid rounded" onclick="expandImage(this)">
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for full-screen image -->
+  <div id="imgModal" class="modal-img" onclick="this.style.display='none'">
+    <span class="modal-img-close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <img class="modal-img-content" id="imgModalContent">
+  </div>
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Anthony Franco — Franco Fix IT</p>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function expandImage(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalContent");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+  </script>
+</body>
+</html>

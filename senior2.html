@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Senior Project 2 | Expert Helpdesk</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <style>
+    body { padding-top: 70px; }
+    .btn-back { position: fixed; top: 15px; right: 15px; }
+    .project-header { text-align: center; margin-bottom: 2rem; }
+    .project-content { max-width: 800px; margin: 0 auto; }
+    .project-images img {
+      width: 100%;
+      height: auto;
+      border-radius: .25rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+    .modal-img {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal-img-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 1000px;
+    }
+    .modal-img-close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="btn btn-outline-secondary btn-back" href="Francos Vinal.html">← Back</a>
+    </div>
+  </nav>
+
+  <!-- Project Content -->
+  <header class="project-header">
+    <h1>Expert Helpdesk</h1>
+    <p class="lead">Senior Year Project #2</p>
+  </header>
+
+  <section class="project-content">
+    <p>During my senior year, I operated at an expert helpdesk level by job shadowing two IT analysts throughout the year. I received real-world training in managing IT infrastructure at Vinal Technical High School and was trusted with independent responsibilities.</p>
+    <ul>
+      <li>Learned about server, local machine, and network management directly from experienced IT professionals.</li>
+      <li>Handled all teacher helpdesk tickets, including software installation, password resets, and troubleshooting connectivity issues.</li>
+      <li>Managed and maintained the entire digital signage system across the school, including:</li>
+      <ul>
+        <li>Monitoring TV units and their IP addresses</li>
+        <li>Configuring and syncing Novo DS players to a central laptop</li>
+        <li>Troubleshooting and replacing signage units when they failed</li>
+      </ul>
+      <li>Worked independently throughout the building with trust from staff and administrators to resolve technical problems efficiently.</li>
+    </ul>
+    <p>This experience helped me build confidence in enterprise level IT work, troubleshooting under pressure, and understanding how IT supports daily school operations.</p>
+    <div class="project-images">
+      <img src="images/senior2image1.jpg" alt="Ticket Dashboard Screenshot" class="img-fluid rounded" onclick="expandImage(this)">
+      <img src="images/senior2image2.jpg" alt="Digital Signage Interface" class="img-fluid rounded" onclick="expandImage(this)">
+    </div>
+  </section>
+
+  <!-- Modal for full-screen image -->
+  <div id="imgModal" class="modal-img" onclick="this.style.display='none'">
+    <span class="modal-img-close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <img class="modal-img-content" id="imgModalContent">
+  </div>
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Anthony Franco — Franco Fix IT</p>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function expandImage(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalContent");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+  </script>
+</body>
+</html>
+
+
+

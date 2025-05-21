@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Franco's Vinal Years Projects">
+  <meta name="author" content="Anthony Franco">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
+
+  <title>Vinal Years | Franco Fix It</title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <style>
+    body {
+      /* Attempt to match the dark theme from templatemo-style.css */
+      background-color: #1e2024; /* Common dark background from the theme */
+      color: #f8f9fa; /* Light text color for dark background */
+      font-family: 'Raleway', sans-serif;
+    }
+
+    #header .navbar {
+        background-color: rgba(30, 32, 36, 0.9); /* Darker, slightly transparent bg for header */
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    #logo {
+        color: #fff; /* Assuming logo text should be white like in index.html */
+        font-weight: 700;
+        font-size: 28px; /* Adjusted for consistency */
+        text-transform: uppercase; /* FFI is uppercase */
+    }
+    #logo:hover {
+        color: #f8f9fa; /* Lighter on hover if desired */
+    }
+
+    .year-tabs {
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: translateY(-50%);
+    }
+    .year-tabs .nav-link {
+      color: rgba(255, 255, 255, 0.7); /* Light text for nav links */
+      padding: 8px 15px;
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .year-tabs .nav-link:hover,
+    .year-tabs .nav-link.active { /* Assuming you might add active class with JS */
+      color: #fff; /* Brighter white for hover/active */
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 4px;
+    }
+
+    .year-section {
+      padding: 80px 0; /* Increased padding for better spacing */
+      border-bottom: 1px solid #333; /* Darker border for dark theme */
+    }
+    .year-section:last-of-type {
+        border-bottom: none;
+    }
+
+    .year-section h2 {
+      color: #fff; /* White headings */
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 36px; /* Larger headings */
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    /* Mimic title-block styling from index.html for section titles */
+    .year-section h2::before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: #007bff; /* Accent color from Bootstrap, or pick from your theme */
+        margin: 0 auto 20px;
+    }
+
+    .year-section h3 { /* Added styling for H3 elements */
+        color: #00aaff; /* Accent color, similar to project titles */
+        text-align: left;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+
+    .project-card {
+      background-color: #2a2d32; /* Darker card background */
+      border: 1px solid #444;    /* Slightly lighter border */
+      border-radius: 8px;       /* More pronounced radius */
+      padding: 1.5rem;           /* More padding */
+      margin-bottom: 1.5rem;     /* More margin */
+      transition: all .3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* Softer shadow */
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px); /* Lift effect on hover */
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .project-images {
+      width: 100%;
+      margin-bottom: 1rem; /* Increased margin */
+      flex-shrink: 0;
+    }
+
+    .project-images img {
+      width: 100%;
+      height: 220px; /* Slightly taller images */
+      object-fit: cover;
+      border-radius: 6px; /* Rounded corners for images */
+      border: 2px solid #444; /* Border for images */
+    }
+
+    .project-card h5 {
+      color: #00aaff; /* Accent color for project titles */
+      margin-top: auto;
+      font-size: 1.4rem; /* Larger title font */
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-card p {
+      flex-grow: 1;
+      color: #ccc; /* Lighter gray for text */
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .col-md-6 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main.container {
+        padding-top: 60px; /* Add padding to avoid overlap with fixed header if it were fixed */
+        padding-bottom: 60px;
+    }
+
+    /* Styling for the PDF viewer container */
+    .resume-viewer-container {
+        background-color: #2a2d32; /* Consistent dark background */
+        border: 1px solid #444;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .resume-viewer-container iframe {
+        border-radius: 6px; /* Rounded corners for the iframe content */
+        border: 2px solid #444; /* Border around the iframe */
+    }
+
+    /* Styling for the certifications list */
+    .certifications-list {
+        list-style: none;
+        padding-left: 0;
+    }
+    .certifications-list li {
+        background-color: #2a2d32;
+        border: 1px solid #444;
+        border-radius: 6px;
+        padding: 15px;
+        margin-bottom: 10px;
+        color: #ccc;
+        font-size: 1rem;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: all .2s ease-in-out;
+    }
+    .certifications-list li:hover {
+        transform: translateX(5px);
+        border-left: 3px solid #00aaff; /* Accent color on hover */
+    }
+
+
+    footer {
+      background-color: #16181b; /* Dark footer background */
+      color: #aaa;
+      padding: 30px 0;
+      border-top: 1px solid #333;
+    }
+    footer p {
+        margin-bottom: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header id="header">
+    <div class="container-fluid position-relative"> <div class="navbar">
+        <a href="index.html" id="logo" title="Franco Fix IT">FFI</a>
+        <ul class="year-tabs nav nav-pills">
+          <li class="nav-item"><a class="nav-link" href="#freshman">Freshman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sophomore">Sophomore</a></li>
+          <li class="nav-item"><a class="nav-link" href="#junior">Junior</a></li>
+          <li class="nav-item"><a class="nav-link" href="#senior">Senior</a></li>
+          </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="freshman" class="year-section animate" data-animate="fadeInUp">
+      <h2>Freshman Year Projects</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="freshman1.html"><img src="images/freshman1.jpg" alt="Virtual Machines"></a>
+            </div>
+            <h5>Virtual Machines</h5>
+            <p>I was able to create a live virtual machine using Hyper-V to run many different ISOs, enabling quick testing of multiple operating systems without dedicated hardware.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="freshman2.html"><img src="images/freshman2.jpg" alt="Basic HTML Website"></a>
+            </div>
+            <h5>Basic HTML Website Creation</h5>
+            <p>Developed a simple, responsive HTML website from scratch, learning structure, styling with CSS, and deploying it for classmates to view.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="freshman3.html"><img src="images/freshman3.jpg" alt="Beginner Helpdesk"></a>
+            </div>
+            <h5>Beginner Helpdesk</h5>
+            <p>I was sent to various teacher computers and classrooms to troubleshoot and fix common issues such as login errors, printer jams, and network connectivity problems.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="freshman4.html"><img src="images/freshman4.jpg" alt="Microsoft Programs"></a>
+            </div>
+            <h5>Learning Microsoft Programs</h5>
+            <p>Studied core Office tools like Word for document creation, PowerPoint for engaging slide decks, and Excel for basic data entry and formulas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sophomore" class="year-section animate" data-animate="fadeInUp">
+      <h2>Sophomore Year Projects</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="sophomore1.html"><img src="images/sophomore1.jpg" alt="Intermediate Helpdesk"></a>
+            </div>
+            <h5>Intermediate Helpdesk</h5>
+            <p>Used Sergei Strelec’s WinPE to repair Windows PCs with core file issues, using trusted freeware tools to run diagnostics and recovery.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="sophomore2.html"><img src="images/sophomore2.jpg" alt="Network Tuning"></a>
+            </div>
+            <h5>Network Tuning</h5>
+            <p>Used TCP Optimizer to tweak DNS and network settings, cutting game ping and making online play smoother.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="sophomore3.html"><img src="images/sophomore3.jpg" alt="Domain Setup Documentation"></a>
+            </div>
+            <h5>Domain Setup Documentation</h5>
+            <p>Captured and labeled: network status screenshot, AD computer object, DHCP lease, and a demo recording of connecting to an SMB share. Completed both virtually via Hyper-V and on a physical server with AD and DHCP.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="sophomore4.html"><img src="images/sophomore4.jpg" alt="Intermediate Photoshop"></a>
+            </div>
+            <h5>Intermediate Photoshop</h5>
+            <p>Applied intermediate Photoshop techniques like layering, masking, and adjustment layers to enhance and retouch images effectively.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="junior" class="year-section animate" data-animate="fadeInUp">
+      <h2>Junior Year Projects</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="junior1.html"><img src="images/junior1.jpg" alt="NAS Setup with Failover Cluster"></a>
+            </div>
+            <h5>NAS Setup with Failover Cluster</h5>
+            <p>Configured a Network Attached Storage system with a three-node failover cluster, ensuring high availability and data redundancy for critical file services.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="junior2.html"><img src="images/junior2.jpg" alt="Android os modification using ADB"></a>
+            </div>
+            <h5>Android OS modification using ADB</h5>
+            <p>Used ADB to develop custom solutions to user problems.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="junior3.html"><img src="images/junior3.jpg" alt="Advanced Helpdesk"></a>
+            </div>
+            <h5>Advanced Helpdesk</h5>
+            <p>Assisted teachers in setting up and scaling classroom systems, troubleshooting hardware and software issues within my helpdesk scope to keep school operations running smoothly.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="junior4.html"><img src="images/junior4.jpg" alt="Hardware Repair, disasembly, and diagnostics."></a>
+            </div>
+            <h5>Hardware Repair</h5>
+            <p>Disasembly of various computer components and devices.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="senior" class="year-section animate" data-animate="fadeInUp">
+      <h2>Senior Year Projects</h2>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="senior1.html"><img src="images/senior1.jpg" alt="FREB Bot"></a>
+            </div>
+            <h5>FREB Bot</h5>
+            <p>From scratch built real estate leads scraper bot, with multiple fallbacks to ensure acuracy with textbelt api inclusion for receiving/sending text messages and reaching out to potential homebuyers.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="senior2.html"><img src="images/senior2.jpg" alt="Notary Prep App"></a>
+            </div>
+            <h5>Expert Helpdesk</h5>
+            <p>Jobshadowed and learned core IT concepts and how they applied throughout Vinal whilst jobshadowing an IT analyst.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="senior3.html"><img src="images/senior3.jpg" alt="Helpdesk Portal"></a>
+            </div>
+            <h5>Expert Level Microsoft applications</h5>
+            <p>By scoring 2nd for the state of Connecticut i demonstrated proficiency in varios technical computer concept one of them being various microsoft office programs.</p>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4">
+          <div class="project-card">
+            <div class="project-images">
+              <a href="senior4.html"><img src="images/senior4.jpg" alt="Pen-Test Toolkit"></a>
+            </div>
+            <h5>FWB</h5>
+            <p>Developed a linux script winmod.sh that automatically bypasses windows lockscreens.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications-resume" class="year-section animate" data-animate="fadeInUp">
+      <h2>Certifications & Resume</h2>
+      
+      <div class="row">
+        <div class="col-12">
+          <h3>My Resume</h3>
+          <div class="resume-viewer-container">
+            <iframe src="images/resume.pdf" width="100%" height="700px" style="border: none;">
+              Your browser does not support PDFs. Please <a href="images/resume.pdf">download the PDF</a> to view it.
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <h3>My Certifications</h3>
+          <ul class="certifications-list">
+            <li>MO-100: Microsoft Word (Office 2019)</li>
+            <li>MO-200: Microsoft Excel (Office 2019)</li>
+            <li>MO-300: Microsoft PowerPoint (Office 2019)</li>
+            <li>CompTIA A+ Core Series (220-1101 & 220-1102)</li>
+            <li>TestOut PC Pro (PC Pro 220)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    </main>
+
+  <footer class="text-center">
+    <p>&copy; 2025 Anthony Franco — Franco Fix IT</p>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.inview.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    // Smooth scrolling for anchor links in the year-tabs
+    $(document).ready(function(){
+      $(".year-tabs a").on('click', function(event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top - 70 // Adjust 70 to be the height of your header or desired offset
+          }, 800, function(){
+            // window.location.hash = hash; // Optional: adds hash to URL after scroll
+          });
+        }
+      });
+
+      // Basic animation trigger (if custom.js doesn't handle it sufficiently)
+      // This is a simplified version of what custom.js in the template might do.
+      // If animations are not working, ensure custom.js is correctly linked and
+      // that it targets '.animate' elements on scroll.
+      $('.animate').on('inview', function(event, isInView) {
+        if (isInView) {
+          var animation = $(this).data('animate');
+          $(this).addClass('animated ' + animation);
+          $(this).css('visibility', 'visible'); // Make sure it's visible after animation
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

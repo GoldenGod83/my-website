@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Junior Project 3 | Advanced Helpdesk</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/templatemo-style.css">
+  <style>
+    body { padding-top: 70px; }
+    .btn-back { position: fixed; top: 15px; right: 15px; }
+    .project-header { text-align: center; margin-bottom: 2rem; }
+    .project-content { max-width: 800px; margin: 0 auto; }
+    .project-images img {
+      width: 100%;
+      height: auto;
+      border-radius: .25rem;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+    .project-images img:hover {
+      transform: scale(1.05);
+    }
+    .modal-img {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .modal-img-content {
+      margin: auto;
+      display: block;
+      width: 90%;
+      max-width: 1000px;
+    }
+    .modal-img-close {
+      position: absolute;
+      top: 30px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <nav class="navbar navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="btn btn-outline-secondary btn-back" href="Francos Vinal.html">← Back</a>
+    </div>
+  </nav>
+
+  <!-- Project Content -->
+  <header class="project-header">
+    <h1>Advanced Helpdesk</h1>
+    <p class="lead">Junior Year Project #3</p>
+  </header>
+
+  <section class="project-content">
+    <p>As part of my helpdesk responsibilities during junior year, I supported classroom operations across the school by troubleshooting and resolving technical issues. My focus was on keeping staff devices and classroom setups working smoothly.</p>
+    <ul>
+      <li>Assisted teachers with setting up and connecting laptops, desktops, and peripherals.</li>
+      <li>Resolved issues with projectors, Wi-Fi connectivity, and smart board calibration.</li>
+      <li>Managed software installations, account sign-ins, and permission troubleshooting.</li>
+      <li>Brought back computers/devices to IT for further taking apart and fixing.</li>
+      <li>gave on site support in classrooms to reduce downtime during lessons.</li>
+    </ul>
+    <p>The images below display my process in diagnosing and fixing a 59.F0 error.
+When I removed the fuser unit, I found a large crack or tear in the pressure roller aswell as a faulty flag actuator gear in the printer causing a loud clanking noise when printing.</p>
+    <div class="project-images">
+      <img src="images/junior3image1.jpg" alt="Classroom Helpdesk Session" class="img-fluid rounded" onclick="expandImage(this)">
+      <img src="images/junior3image2.jpg" alt="Troubleshooting Equipment" class="img-fluid rounded" onclick="expandImage(this)">
+    </div>
+  </section>
+
+  <!-- Modal for full-screen image -->
+  <div id="imgModal" class="modal-img" onclick="this.style.display='none'">
+    <span class="modal-img-close" onclick="document.getElementById('imgModal').style.display='none'">&times;</span>
+    <img class="modal-img-content" id="imgModalContent">
+  </div>
+
+  <footer class="text-center py-4">
+    <p>&copy; 2025 Anthony Franco — Franco Fix IT</p>
+  </footer>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script>
+    function expandImage(img) {
+      const modal = document.getElementById("imgModal");
+      const modalImg = document.getElementById("imgModalContent");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+  </script>
+</body>
+</html>
